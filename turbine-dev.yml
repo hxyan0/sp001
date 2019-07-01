@@ -2,8 +2,23 @@ spring:
   application:
     name: turbin
     
+rabbitmq:
+    host: 192.168.174.130
+    port: 5672
+    username: admin
+    password: admin    
 server:
   port: 5001
+  
+---
+spring: 
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: turbine
+      profile: dev
   
 eureka:
   client:
