@@ -1,9 +1,25 @@
 spring:
   application:
     name: zuul
-    
+
+rabbitmq:
+    host: 192.168.174.130
+    port: 5672
+    username: admin
+    password: admin
+        
 server:
   port: 3001
+  
+---
+spring: 
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: zuul
+      profile: dev
   
 eureka:
   client:
