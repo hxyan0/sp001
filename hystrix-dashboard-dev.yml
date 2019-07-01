@@ -1,9 +1,25 @@
 spring:
   application:
     name: hystrix-dashboard
-    
+ 
+rabbitmq:
+    host: 192.168.174.130
+    port: 5672
+    username: admin
+    password: admin
+       
 server:
   port: 4001
+  
+---
+spring: 
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      name: hystrix-dashboard
+      profile: dev
 
 eureka:
   client:
